@@ -6,7 +6,7 @@ const Events = (props) => (
     <div className="widget-header">
       <h3 className="widget-header__title">Your Events</h3>
       <button
-        className="button button--link"
+        className="button"
         onClick={props.handleSaveTxt}
       >
         Save as txt

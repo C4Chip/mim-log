@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
+import JumpMimMan from './JumpMimMan';
 import AddEvent from './AddEvents';
+import AddMimNum from './AddMinNum';
 import Events from './Events';
 import {saveAs} from 'file-saver';
 
@@ -9,9 +11,11 @@ export default class Mimlog extends React.Component {
     constructor(props) {
       super(props);
       this.handleAddEvent = this.handleAddEvent.bind(this);
+      this.handleAddMimNum = this.handleAddMimNum.bind(this);
       this.handleSaveTxt = this.handleSaveTxt.bind(this);
       this.handleDeleteEvent = this.handleDeleteEvent.bind(this);
       this.state = {
+        mimnumber:'',
         events: []
       };
     }
@@ -39,7 +43,9 @@ export default class Mimlog extends React.Component {
 
     handleSaveTxt() {
       var FileSave = require('file-saver');
-      var file = new File(this.state.events, "Time-Line.txt", {type: "text/plain;charset=utf-8"});
+      var mimarray = [this.state.mimnumber];
+      const needToSave = (mimarray).concat('\r', 'Time-Line: \r',this.state.events);
+      var file = new File(needToSave, "Time-Line.txt", {type: "text/plain;charset=utf-8"});
       FileSave.saveAs(file);
     }
 
@@ -61,6 +67,10 @@ export default class Mimlog extends React.Component {
       }));
     }
 
+    handleAddMimNum(mimnumber) {
+        this.setState( ()=>({mimnumber}));
+    }
+
     render() {
       const subtitle = 'For a better mim experience';
   
@@ -68,7 +78,7 @@ export default class Mimlog extends React.Component {
         <div>
           <Header subtitle={subtitle} />
           <div className="container">
-
+            
           <div className="widget">
             <Events
               events={this.state.events}
@@ -79,6 +89,14 @@ export default class Mimlog extends React.Component {
               handleAddEvent={this.handleAddEvent}
             />
           </div>
+
+          <div className="widget">
+          <AddMimNum
+            handleAddMimNum={this.handleAddMimNum}
+          />
+          </div>
+
+          <JumpMimMan/>
         </div>
         </div>
       );

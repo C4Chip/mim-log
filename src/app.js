@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppRouter from './routers/AppRouter';
 // import IndecisionApp from './components/IndecisionApp';
-import Mimlog from './mimComponents/mimApp';
 //import 'normalize.css/normalize.css';
 import './mimStyles/styles.scss';
 
-ReactDOM.render(<Mimlog />, document.getElementById('app'));
+
+ReactDOM.render(<AppRouter />, document.getElementById('app'));

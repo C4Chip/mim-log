@@ -33,7 +33,7 @@ export default class AddEvent extends React.Component {
         {this.state.error && <p className="add-event-error">{this.state.error}</p>}
         <form className="add-event" onSubmit={this.handleAddEvent}>
           <input className="add-event__input" type="text" name="event" />
-          <button className="button">Add event</button>
+          <button className="button">Add Event</button>
         </form>
       </div>
     );
