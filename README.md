@@ -7,4 +7,4 @@
     In terminal run following command:
     npm install
     npm run build
-    live-server public
+    live-server public or npm run dev-server
