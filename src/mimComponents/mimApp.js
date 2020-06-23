@@ -3,6 +3,7 @@ import Header from './Header';
 import JumpMimMan from './JumpMimMan';
 import AddEvent from './AddEvents';
 import AddMimNum from './AddMinNum';
+import ShowMimNum from './ShowMimNum';
 import Events from './Events';
 import {saveAs} from 'file-saver';
 
@@ -91,6 +92,9 @@ export default class Mimlog extends React.Component {
           </div>
 
           <div className="widget">
+          <ShowMimNum
+            mimnumber={this.state.mimnumber}
+          />
           <AddMimNum
             handleAddMimNum={this.handleAddMimNum}
           />

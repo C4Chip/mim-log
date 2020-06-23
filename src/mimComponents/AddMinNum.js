@@ -29,7 +29,6 @@ export default class AddMimNum extends React.Component {
         return (
             <div>
                 {this.state.error && <p className="add-event-error">{this.state.error}</p>}
-
                 <form className="add-event" onSubmit={this.handleAddMimNum}>
                     <input className="add-event__input" type="text" name="mimnum" />
                     <button className="button">Add-MimNum</button>
