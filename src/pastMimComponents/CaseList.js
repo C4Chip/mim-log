@@ -1,12 +1,10 @@
 import React from 'react';
 import CaseListItem from './CaseListItem';
-import Header from '../mimComponents/Header';
 import getVisiableCases from '../selector/mimCases';
 import { connect } from 'react-redux';
 
 const CaseList = (props) => (
     <div>
-        <Header subtitle={'For a better mim experience'} />
         <div className="container">
             <div className="widget">
                 

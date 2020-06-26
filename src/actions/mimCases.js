@@ -4,7 +4,7 @@ import {v4 as uuidv4} from 'uuid';
 export const addCase = ( {mimNum='', events=[], createAt=0 } = {}) => {
     return {
         type: 'ADD_CASE',
-        case: {
+        casee: {
             id: uuidv4(),
             mimNum,
             events,

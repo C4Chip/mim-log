@@ -6,7 +6,7 @@ const mimCasesesReducerDefaultState = [];
 const mimCaseseReducer = (state=mimCasesesReducerDefaultState, action) => {
     switch(action.type) {
         case 'ADD_CASE':
-            return [...state, action.case];
+            return [...state, action.casee];
         case 'REMOVE_CASE':
             return state.filter(({ id }) => id !== action.id);
         case 'EDIT_CASE':
