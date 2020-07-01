@@ -32,7 +32,8 @@ export default class CaseForm extends React.Component {
 
         this.setState( () => ({events}))
     }
-    onDateChange = (createAt) => {
+    onDateChange = (e) => {
+        const createAt = e.target.value
         if (createAt) {
             this.setState( () => ({createAt}));
         }
@@ -101,7 +102,8 @@ export default class CaseForm extends React.Component {
                                 <div className="event">
                                 <input
                                     className="add-event__input"
-                                    type="date"
+                                    type="datetime-local"
+                                    value={this.state.createAt}
                                     onChange={this.onDateChange}
                                 />
                                 </div>
